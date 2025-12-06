@@ -10,7 +10,7 @@ namespace Tyuiu.GolovanovDO.Sprint6.Task1.V10.Lib
             int count = 0;
             for (int x = startValue; x <= stopValue; x++)
             {
-                double y = Math.Round(Math.Sin(x) + (2 / 3 * x + 0.5) - 2 * Math.Cos(x) * 2*x, 2);
+                double y = Math.Round(Math.Sin(x) + 2 / (3 * x + 0.5) - 2 * Math.Cos(x) * 2*x, 2);
                 mass[count] = y;
                 count++;
             }
