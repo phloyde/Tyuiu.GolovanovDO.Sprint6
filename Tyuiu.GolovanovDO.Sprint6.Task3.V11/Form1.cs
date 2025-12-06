@@ -21,8 +21,9 @@ namespace Tyuiu.GolovanovDO.Sprint6.Task3.V11
 
         private void buttonDone_Click(object sender, EventArgs e)
         {
-            int rows = mtrx.GetUpperBound(0) + 1;
-            int cols = mtrx.Length / rows;
+            int[,] sortedmtrx = ds.Calculate(mtrx);
+            int rows = sortedmtrx.GetUpperBound(0) + 1;
+            int cols = sortedmtrx.Length / rows;
 
             dataGridViewResult.ColumnCount = cols;
             dataGridViewResult.RowCount = rows;
@@ -38,7 +39,7 @@ namespace Tyuiu.GolovanovDO.Sprint6.Task3.V11
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    dataGridViewResult.Rows[i].Cells[j].Value = Convert.ToString(mtrx[i, j]);
+                    dataGridViewResult.Rows[i].Cells[j].Value = Convert.ToString(sortedmtrx[i, j]);
 
                 }
             }
