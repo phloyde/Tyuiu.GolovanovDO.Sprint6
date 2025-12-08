@@ -15,10 +15,10 @@ namespace Tyuiu.GolovanovDO.Sprint6.Task6.V1.Lib
 
             foreach (string line in str)
             {
-                firstWord = firstWord + "1" + line.Split(' ').First();
+                firstWord = firstWord  + line.Split(' ').First() + " ";
                 
             }
-            firstWord = firstWord.Substring(1);
+            firstWord = firstWord.Substring(0, firstWord.Length -1);
             return firstWord;
 
         }
