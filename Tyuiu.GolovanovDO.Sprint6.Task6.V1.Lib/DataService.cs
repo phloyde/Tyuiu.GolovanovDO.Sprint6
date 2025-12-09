@@ -5,23 +5,22 @@ namespace Tyuiu.GolovanovDO.Sprint6.Task6.V1.Lib
     {
         public string CollectTextFromFile(string path)
         {
-            string[] lines = File.ReadAllLines(path);
-            List<string> firstWords = new List<string>();
+            
+            string firstWord = "";
 
-            foreach (string line in lines)
+            string[] str = File.ReadAllLines(path);
+
+
+
+
+            foreach (string line in str)
             {
-                if (!string.IsNullOrWhiteSpace(line))
-                {
-                    // Убираем пробелы в начале/конце строки и игнорируем пустые элементы
-                    string[] words = line.Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries);
-                    if (words.Length > 0)
-                    {
-                        firstWords.Add(words[0]);
-                    }
-                }
+                firstWord = firstWord  + line.Split(' ').First() + " ";
+                
             }
+            firstWord = firstWord.Substring(0, firstWord.Length - 1);
+            return firstWord;
 
-            return string.Join(" ", firstWords);
         }
     }
 }
